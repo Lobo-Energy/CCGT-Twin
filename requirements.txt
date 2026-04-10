@@ -1,0 +1,16 @@
+streamlit
+pandas
+copernicusmarine
+requests
+joblib
+numpy
+pyarrow
+altair
+xgboost
+openmeteo-requests
+requests-cache
+retry-requests
+streamlit-autorefresh
+httpx
+scikit-learn
+openpyxl
