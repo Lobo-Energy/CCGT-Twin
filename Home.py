@@ -111,10 +111,4 @@ for col, module in zip(row1_cols + row2_cols, MODULES):
 # ---------------------------------------------------------------------------
 
 st.divider()
-f_col1, f_col2 = st.columns([0.85, 0.15], vertical_alignment="center")
-
-with f_col1:
-    st.info(content["menu_info"], icon="ℹ️")
-with f_col2:
-    st.caption("Powered by")
-    st.image("./assets/logo.svg", width=100)
+st.info(content["menu_info"], icon="ℹ️")

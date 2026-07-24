@@ -6,7 +6,7 @@
 ![XGBoost](assets/badges/xgboost.svg)
 ![License](assets/badges/license.svg)
 
-> Built by a **Shift Supervisor with 16 years of hands-on CCGT experience** — not a data scientist who read about power plants.  
+> Built by a **Shift Supervisor with 15 years of hands-on CCGT experience** — not a data scientist who read about power plants.  
 > Every parameter, every constraint, every decision logic in this app comes from real operational knowledge.
 
 ---
@@ -103,9 +103,9 @@ Interactive simulator for training and scenario analysis. Adjust temperature, hu
 
 This project was built entirely outside working hours by a **Shift Supervisor** with :
 
-- **16 years of operational experience** on a 400 MW Combined Cycle Gas Turbine
+- **15 years of operational experience** on a 400 MW Combined Cycle Gas Turbine
 - Full authority over production, safety and personnel (up to 200 people during outages)
-- Zero serious accidents over 16 years
+- Zero serious accidents over 15 years
 - Daily hands-on experience with **DCS ABB 800xA**, **AVEVA PI Vision**, thermodynamic parameters, grid balancing, and emergency procedures
 
 The digital components were self-taught and self-implemented :

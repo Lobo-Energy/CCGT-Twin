@@ -16,11 +16,11 @@ def apply_global_settings() -> None:
     """Configure la page Streamlit et le logo global."""
     st.set_page_config(
         page_title="CCGT-Twin",
-        page_icon="./assets/logo.svg",
+        #page_icon="./assets/logo.svg",
         layout="wide",
         initial_sidebar_state="expanded",
     )
-    st.logo(image="./assets/logo.svg", size="large")
+    #st.logo(image="./assets/logo.svg", size="large")
 
 
 # ---------------------------------------------------------------------------
