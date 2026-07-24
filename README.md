@@ -1,10 +1,10 @@
 # ⚡ CCGT-Twin — Digital Twin for Thermal Power Plant Operations
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://ccgt-twin.streamlit.app/)
-![Python](https://img.shields.io/badge/Python-3.11+-blue?logo=python&logoColor=white)
-![Streamlit](https://img.shields.io/badge/Streamlit-1.x-FF4B4B?logo=streamlit&logoColor=white)
-![XGBoost](https://img.shields.io/badge/XGBoost-ML%20Model-orange?logo=xgboost)
-![License](https://img.shields.io/badge/License-Private-lightgrey)
+[![Streamlit App](assets/badges/streamlit_badge.svg)](https://ccgt-twin.streamlit.app/)
+![Python](assets/badges/python.svg)
+![Streamlit](assets/badges/streamlit.svg)
+![XGBoost](assets/badges/xgboost.svg)
+![License](assets/badges/license.svg)
 
 > Built by a **Shift Supervisor with 16 years of hands-on CCGT experience** — not a data scientist who read about power plants.  
 > Every parameter, every constraint, every decision logic in this app comes from real operational knowledge.
