@@ -274,7 +274,8 @@ async def run_update() -> None:
     reste_t5       = (t_proche - maintenant_api).total_seconds() / 60
     delta_p_aff    = delta_p / CONFIG["GRADIENT_MW_MIN"]
 
-    opportunite      = (prix_mwh > cm_moyen) if si_mw > 0 else (cm_moyen > prix_mwh)
+    # opportunite      = (prix_mwh > cm_moyen) if si_mw > 0 else (cm_moyen > prix_mwh)
+    opportunite = ( cm_moyen > prix_mwh) if si_mw > 0 else ( prix_mwh > cm_moyen)
     gain_estime      = abs(prix_mwh - cm_moyen) * (delta_p / 60) * temps_rampe
     new_cons         = prod_plan + delta_p if prod_avec_SI > prod_plan else prod_plan - delta_p
     hr_new_cons      = generer_perfo(t_air, press, hum, t_eau, new_cons)
