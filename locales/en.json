@@ -106,7 +106,7 @@
 		"label_statut" : "Status: {statut}",
 		"label_Details" : "📊 Performance Tier Details",
 		"label_MAJ" : "Last Update",
-		"label_qualite" : "API Quality: {qualite_api}%",
+		"label_qualite" : "API Quality",
 		"label_Timer" : "⏳ Next update in {seconds}s...",
 		"err_plan_charge" : "Load plan not loaded",
 		"err_api_meteo_monitoring" : "Weather Monitoring API unavailable",

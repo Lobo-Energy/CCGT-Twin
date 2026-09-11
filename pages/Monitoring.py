@@ -207,8 +207,10 @@ def afficher_dashboard(remaining: int) -> None:
         st.session_state.last_update_ts,
         content["label_MAJ"],
         height=70,
+        extra_pairs=[
+            (content["label_qualite"], f"{d['qualite_api']:.0f}%"),
+        ],
         extra_lines=[
-            content["label_qualite"].format(qualite_api=d["qualite_api"]),
             content["label_Timer"].format(seconds=remaining),
         ],
     )

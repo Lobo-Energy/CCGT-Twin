@@ -117,7 +117,7 @@
 		"label_statut" : "Stato: {statut}",
 		"label_Details" : "📊 Dettagli dei livelli di prestazione",
 		"label_MAJ" : "Ultimo aggiornamento",
-		"label_qualite" : "Qualità API: {qualite_api}%",
+		"label_qualite" : "Qualità API",
 		"label_Timer" : "⏳ Prossimo aggiornamento tra {seconds}s...",
 		"err_plan_charge" : "Piano di carico non caricato",
 		"err_api_meteo_monitoring" : "API meteo Monitoring non disponibile",
