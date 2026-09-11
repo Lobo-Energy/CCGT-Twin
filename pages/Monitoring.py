@@ -194,7 +194,6 @@ def afficher_dashboard() -> None:
 
     st.markdown(content["label_reco"])
     afficher_recommandation(f"{d['sym']} {d['decision']}", d["color"])
-    st.caption(content["label_statut"].format(statut=d["statut"]))
 
     if d["opp_valable"]:
         t_col1, t_col2 = st.columns(2)
@@ -205,6 +204,7 @@ def afficher_dashboard() -> None:
 
     afficher_heure_sync(st.session_state.last_update_ts, content["label_MAJ"])
     st.caption(content["label_qualite"].format(qualite_api=d["qualite_api"]))
+    st.caption(content["label_statut"].format(statut=d["statut"]))
 
 
 # ---------------------------------------------------------------------------
