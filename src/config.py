@@ -61,7 +61,8 @@ def afficher_heure_sync(ts: float, label: str, height: int = 25) -> None:
     """
     components.html(
         f"""
-        <p style="font-size:0.85rem; color:gray; margin:0; padding:0;">
+        <p style="font-size:0.85rem; color:gray; margin:0; padding:0;
+            font-family:'Source Sans Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
             {label} : <span id="heure_sync"></span>
         </p>
         <script>
