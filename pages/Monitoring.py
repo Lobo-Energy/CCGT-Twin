@@ -196,6 +196,7 @@ def afficher_dashboard() -> None:
 
     st.markdown(content["label_reco"])
     afficher_recommandation(f"{d['sym']} {d['decision']}", d["color"])
+    st.caption(content["label_statut"].format(statut=d["statut"]))
 
     if d["opp_valable"]:
         t_col1, t_col2 = st.columns(2)
@@ -315,6 +316,7 @@ async def run_update() -> None:
         "opp_valable":  opp_valable,
         "delta_p_aff":  delta_p_aff,
         "reste_t5":     reste_t5,
+        "statut":       statut,
         "tableau_perf": tableau_perf,
         "qualite_api":  qualite_api,
     }

@@ -103,6 +103,7 @@
 		"label_reco" : "### Recommendation",
 		"label_T_Rampe" : "⏱️ **Ramp time:** {delta_p_aff:.1f} min",
 		"label_T_5" : "📅 **T+5:** {reste_t5:.1f} min",
+		"label_statut" : "🕐 **Status:** {statut}",
 		"label_Details" : "📊 Performance Tier Details",
 		"label_MAJ" : "Last Update: {heure_maj} | API Quality: {qualite_api}%",
 		"label_Timer" : "⏳ Next update in {seconds}s...",

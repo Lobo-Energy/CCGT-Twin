@@ -114,6 +114,7 @@
 		"label_reco" : "### Raccomandazione",
 		"label_T_Rampe" : "⏱️ **Tempo di rampa:** {delta_p_aff:.1f} min",
 		"label_T_5" : "📅 **T+5:** {reste_t5:.1f} min",
+		"label_statut" : "🕐 **Stato:** {statut}",
 		"label_Details" : "📊 Dettagli dei livelli di prestazione",
 		"label_MAJ" : "Ultimo aggiornamento: {heure_maj} | Qualità API: {qualite_api}%",
 		"label_Timer" : "⏳ Prossimo aggiornamento tra {seconds}s...",
