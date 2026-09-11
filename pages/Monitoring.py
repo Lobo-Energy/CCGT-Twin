@@ -168,7 +168,7 @@ def afficher_recommandation(decision: str, color: str) -> None:
     )
 
 
-def afficher_dashboard() -> None:
+def afficher_dashboard(remaining: int) -> None:
     """
     Lit les données depuis session_state et les affiche.
     Appelée à chaque rerun — persistance pendant le countdown.
@@ -203,8 +203,15 @@ def afficher_dashboard() -> None:
         with st.expander(content["label_Details"]):
             st.dataframe(d["tableau_perf"], use_container_width=True)
 
-    afficher_heure_sync(st.session_state.last_update_ts, content["label_MAJ"])
-    st.caption(content["label_qualite"].format(qualite_api=d["qualite_api"]))
+    afficher_heure_sync(
+        st.session_state.last_update_ts,
+        content["label_MAJ"],
+        height=70,
+        extra_lines=[
+            content["label_qualite"].format(qualite_api=d["qualite_api"]),
+            content["label_Timer"].format(seconds=remaining),
+        ],
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -339,8 +346,7 @@ def dashboard_fragment() -> None:
         st.session_state.last_update_ts = time.time()
         remaining = CONFIG["UPDATE_INTERVAL"]
 
-    afficher_dashboard()
-    st.caption(content["label_Timer"].format(seconds=remaining))
+    afficher_dashboard(remaining)
 
 
 def main() -> None:

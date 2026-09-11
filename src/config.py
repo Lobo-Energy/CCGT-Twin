@@ -46,7 +46,9 @@ def get_site_config() -> dict:
 # Utilitaire — Affichage de l'heure de synchronisation
 # ---------------------------------------------------------------------------
 
-def afficher_heure_sync(ts: float, label: str, height: int = 25) -> None:
+def afficher_heure_sync(
+    ts: float, label: str, height: int = 25, extra_lines: list[str] | None = None
+) -> None:
     """
     Affiche l'heure du dernier appel API dans le fuseau horaire local
     du navigateur de l'utilisateur.
@@ -55,16 +57,24 @@ def afficher_heure_sync(ts: float, label: str, height: int = 25) -> None:
     à l'affichage via JS — gère automatiquement heure d'été / hiver.
 
     Args:
-        ts:     Timestamp Unix UTC (time.time()).
-        label:  Texte du label (ex: "Dernière synchronisation").
-        height: Hauteur du composant HTML en pixels (défaut: 25).
+        ts:          Timestamp Unix UTC (time.time()).
+        label:       Texte du label (ex: "Dernière synchronisation").
+        height:      Hauteur du composant HTML en pixels (défaut: 25).
+        extra_lines: Lignes de texte additionnelles affichées en dessous,
+                     dans le même bloc HTML — évite tout décalage de
+                     police/alignement avec des st.caption() natifs juxtaposés.
     """
+    style = (
+        "font-size:0.85rem; color:gray; margin:0; padding:0;"
+        "font-family:'Source Sans Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;"
+    )
+    lignes_html = "".join(f'<p style="{style}">{ligne}</p>' for ligne in (extra_lines or []))
     components.html(
         f"""
-        <p style="font-size:0.85rem; color:gray; margin:0; padding:0;
-            font-family:'Source Sans Pro',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;">
+        <p style="{style}">
             {label} : <span id="heure_sync"></span>
         </p>
+        {lignes_html}
         <script>
             const date = new Date({ts} * 1000);
             document.getElementById("heure_sync").innerText =
