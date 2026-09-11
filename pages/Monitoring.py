@@ -8,8 +8,6 @@ import asyncio
 import datetime as dt
 import time
 import warnings
-from datetime import datetime
-from zoneinfo import ZoneInfo
 
 import dateutil.parser
 import httpx
@@ -17,7 +15,7 @@ import numpy as np
 import pandas as pd
 import streamlit as st
 
-from src.config import apply_global_settings
+from src.config import apply_global_settings, afficher_heure_sync
 from src.i18n import init_language
 from src.api import update_meteo, getMeteo, getTemperatureEau
 from src.models import getPuissance, getRendement
@@ -205,15 +203,8 @@ def afficher_dashboard() -> None:
         with st.expander(content["label_Details"]):
             st.dataframe(d["tableau_perf"], use_container_width=True)
 
-    heure_belge = datetime.fromtimestamp(
-        st.session_state.last_update_ts, tz=ZoneInfo("Europe/Brussels")
-    )
-    st.caption(
-        content["label_MAJ"].format(
-            heure_maj=heure_belge.strftime("%H:%M:%S"),
-            qualite_api=d["qualite_api"],
-        )
-    )
+    afficher_heure_sync(st.session_state.last_update_ts, content["label_MAJ"])
+    st.caption(content["label_qualite"].format(qualite_api=d["qualite_api"]))
 
 
 # ---------------------------------------------------------------------------
