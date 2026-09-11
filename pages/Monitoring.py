@@ -324,9 +324,14 @@ async def run_update() -> None:
 # Point d'entrée
 # ---------------------------------------------------------------------------
 
-def main() -> None:
-    st.title(content["titre"])
-
+@st.fragment(run_every=1)
+def dashboard_fragment() -> None:
+    """
+    Fragment auto-rafraîchi chaque seconde pour le compte à rebours.
+    Isolé du script principal : seul ce bloc est redessiné, évitant
+    de reconstruire tout le dashboard (et la rémanence visuelle que
+    ça provoquait) juste pour faire tourner le minuteur.
+    """
     if "last_update_ts" not in st.session_state:
         st.session_state.last_update_ts = 0.0
 
@@ -340,10 +345,12 @@ def main() -> None:
         remaining = CONFIG["UPDATE_INTERVAL"]
 
     afficher_dashboard()
-
     st.caption(content["label_Timer"].format(seconds=remaining))
-    time.sleep(1)
-    st.rerun()
+
+
+def main() -> None:
+    st.title(content["titre"])
+    dashboard_fragment()
 
 
 if __name__ == "__main__":
