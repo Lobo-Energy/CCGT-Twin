@@ -205,7 +205,9 @@ def afficher_dashboard() -> None:
         with st.expander(content["label_Details"]):
             st.dataframe(d["tableau_perf"], use_container_width=True)
 
-    heure_belge = datetime.now(ZoneInfo("Europe/Brussels"))
+    heure_belge = datetime.fromtimestamp(
+        st.session_state.last_update_ts, tz=ZoneInfo("Europe/Brussels")
+    )
     st.caption(
         content["label_MAJ"].format(
             heure_maj=heure_belge.strftime("%H:%M:%S"),
