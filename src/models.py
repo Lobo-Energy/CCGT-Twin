@@ -20,9 +20,9 @@ from datetime import datetime
 def load_model():
     """Charge et met en cache le modèle de prédiction de puissance maximale."""
     try:
-        return joblib.load("./config/jumeau_pmax_v3_anonymisation.joblib")
+        return joblib.load("./config/jumeau_pmax.joblib")
     except FileNotFoundError:
-        st.error("❌ Modèle de puissance introuvable : ./config/jumeau_pmax_v3_anonymisation.joblib")
+        st.error("❌ Modèle de puissance introuvable : ./config/jumeau_pmax.joblib")
         st.stop()
 
 
@@ -30,9 +30,9 @@ def load_model():
 def load_rendement():
     """Charge et met en cache le modèle de prédiction du rendement."""
     try:
-        return joblib.load("./config/jumeau_rendement_v3_anonymisation.joblib")
+        return joblib.load("./config/jumeau_rendement.joblib")
     except FileNotFoundError:
-        st.error("❌ Modèle de rendement introuvable : ./config/jumeau_rendement_v3_anonymisation.joblib")
+        st.error("❌ Modèle de rendement introuvable : ./config/jumeau_rendement.joblib")
         st.stop()
 
 

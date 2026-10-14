@@ -29,9 +29,7 @@ Operating a CCGT plant means making **real-time decisions under pressure** :
 
 These questions are answered today with experience and intuition. This project answers them with **data**.
 
-The models were trained on **real operational data** extracted from a 400 MW CCGT plant via **PI Web API (OSIsoft PI System)**, stored as **Parquet files compressed with ZStandard**. The digital twin replicates the plant's thermodynamic behaviour with sufficient fidelity for operational decision support.
-
-> ⚠️ **Confidentiality** : Site coordinates, raw data, and model outputs have been anonymised. A multiplicative factor has been applied to power predictions to prevent disclosure of sensitive operational information.
+The predictive models are trained on representative CCGT operational time-series data, stored as **Parquet files compressed with ZStandard** for fast, vectorised calculations. The digital twin replicates CCGT thermodynamic behaviour with sufficient fidelity for operational decision support.
 
 ---
 
@@ -47,7 +45,7 @@ The models were trained on **real operational data** extracted from a 400 MW CCG
 ┌──────────────────────────────────────────────────────────┐
 │                  ML Models (XGBoost)                     │
 │  ┌─────────────────────┐  ┌──────────────────────────┐   │
-│  │  jumeau_pmax_v2     │  │   jumeau_rendement       │   │
+│  │  jumeau_pmax        │  │   jumeau_rendement       │   │
 │  │  Max Power (MW)     │  │   Thermal Efficiency (%) │   │
 │  └─────────────────────┘  └──────────────────────────┘   │
 └─────────────────────┬────────────────────────────────────┘
@@ -150,7 +148,7 @@ ccgt-twin/
 │   ├── api.py                   # Weather API + session state
 │   └── models.py                # ML inference functions
 ├── config/
-│   ├── jumeau_pmax_v2.joblib    # Power digital twin (XGBoost)
+│   ├── jumeau_pmax.joblib       # Power digital twin (XGBoost)
 │   └── jumeau_rendement.joblib  # Efficiency digital twin (XGBoost)
 ├── locales/
 │   ├── fr.json                  # French
@@ -210,7 +208,7 @@ NEAR_SEA  = true
 ## 📄 License
 
 Private repository — all rights reserved.  
-Models and data are anonymised. Do not redistribute.
+Do not redistribute.
 
 ---
 
