@@ -120,7 +120,7 @@ with col2:
         key="val_slider_pression",
     )
 
-st.slider(content["label_slider"], min_value=0, max_value=6, key="val_slider_fogging")
+st.slider(content["label_slider"], min_value=0, max_value=4, key="val_slider_fogging")
 
 # ---------------------------------------------------------------------------
 # Métriques

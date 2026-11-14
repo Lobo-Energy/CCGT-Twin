@@ -25,7 +25,7 @@ update_meteo()
 
 MAE        = 1.6
 DEBIT      = 12
-MAX_POMPES = 6
+MAX_POMPES = 4
 
 
 # ---------------------------------------------------------------------------
@@ -55,7 +55,7 @@ def getMeteoPrevisionsCompletes(nb_jours: int) -> list[dict] | None:
         p_ext = previsions["p_ext"]
         t_eau = previsions["t_eau"]
 
-        # Calcul vectorisé : 96 créneaux × 7 configs → 672 prédictions
+        # Calcul vectorisé : 96 créneaux × 5 configs → 480 prédictions
         nb_configs  = MAX_POMPES + 1
         idx_creneau = np.repeat(np.arange(96), nb_configs)
         idx_pompe   = np.tile(np.arange(nb_configs), 96)

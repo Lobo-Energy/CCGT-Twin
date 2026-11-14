@@ -109,7 +109,7 @@ st.markdown(f"""
 # ---------------------------------------------------------------------------
 
 st.write(content["label_impact"])
-st.slider(content["label_slider"], min_value=0, max_value=6, key="val_slider")
+st.slider(content["label_slider"], min_value=0, max_value=4, key="val_slider")
 
 col_sans, col_avec = st.columns(2)
 with col_sans:

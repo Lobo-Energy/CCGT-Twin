@@ -74,7 +74,7 @@ The predictive models are trained on representative CCGT operational time-series
 ## 📦 Modules
 
 ### 🔍 Fogging — *"Is it worth starting the pumps?"*
-The fogging system cools inlet air to increase air density and boost power output — but only under the right conditions. This module pulls **live weather data** and simulates each pump configuration (0 to 6 pumps) against the digital twin, giving an instant answer with the expected MW gain.
+The fogging system cools inlet air to increase air density and boost power output — but only under the right conditions. This module pulls **live weather data** and simulates each pump configuration (0 to 4 pumps) against the digital twin, giving an instant answer with the expected MW gain.
 
 ### 📈 Forecasting — *"What can we promise for tomorrow?"*
 Generates a **96-slot (15-min) power forecast** for J+1 or J+2 combining :
@@ -166,7 +166,7 @@ ccgt-twin/
 
 **Separation of fetch and display** — API fetch functions are decorated with `@st.cache_data` and contain no Streamlit UI calls. Public wrapper functions handle error display separately, preventing silent crashes.
 
-**Vectorised batch inference** — The Forecasting module builds a single 672-row DataFrame (96 time slots × 7 pump configs) and calls the XGBoost model once. Typical speedup : 10–50× vs. a naive loop.
+**Vectorised batch inference** — The Forecasting module builds a single 480-row DataFrame (96 time slots × 5 pump configs) and calls the XGBoost model once. Typical speedup : 10–50× vs. a naive loop.
 
 **Non-blocking refresh loop** — The Monitoring dashboard uses `st.session_state` + `st.rerun()` instead of a blocking `while True / time.sleep()` loop, keeping the Streamlit thread free for multi-user deployments.
 
